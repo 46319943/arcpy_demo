@@ -45,9 +45,9 @@ def clip_csv():
     for folder in CSV_FOLDER:
         temp_path = join(WORKSPACE, TEMP, folder)
         for filepath in glob.glob(join(WORKSPACE, folder, '*.csv')):
-            print join(temp_path, filename + '.shp')
             
             filename = splitext(basename(filepath))[0]
+            print join(temp_path, filename + '.shp')
 
             arcpy.MakeXYEventLayer_management(
                 filepath, X_FIELD, Y_FIELD, filename + 'Event', spatial_ref)
@@ -76,9 +76,9 @@ def clip_poi():
     for city in listdir(join(WORKSPACE, POI_FOLDER)):
         temp_path=join(WORKSPACE, TEMP, POI_FOLDER, city)
         for filepath in glob.glob(join(WORKSPACE, POI_FOLDER, city, '*.xls*')):
-            print join(temp_path, filename + '.shp')
 
             filename=splitext(basename(filepath))[0]
+            print join(temp_path, filename + '.shp')
 
             arcpy.MakeXYEventLayer_management(
                 filepath + '/Sheet1$', X_FIELD_POI, Y_FIELD_POI, filename + 'Event', spatial_ref)

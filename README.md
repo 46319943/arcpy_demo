@@ -3,6 +3,9 @@
 - 过程：展点、裁切
 - 输出：TEMP目录下，房租点、POI点对应的SHP文件
 
+## 注意事项
+- China目录下，Haikou的SHP文件名错误，请手动去掉“Haikou ”最后的空格字符
+
 ## 目录结构
 - D:\Document\ArcMapDemo\price_POI_LY（工作空间）
     - China（中国各城市区划SHP）

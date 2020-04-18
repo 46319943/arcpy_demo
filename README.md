@@ -15,6 +15,7 @@
     - Ningbo.csv，“经度_wgs84”改为“Lon84”
     - Qingdao.csv，“经度_wgs84”改为“Lon84”
     - Shenzhen.csv，“经度_wgs84”改为“Lon84”
+    - Suzhou.csv，“经度_wgs84”改为“Lon84”
 
 ## 目录结构
 - D:\Document\ArcMapDemo\price_POI_LY（工作空间）

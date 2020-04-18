@@ -7,6 +7,14 @@
 - China行政区划
     - Haikou的SHP文件名错误，请手动去掉“Haikou ”最后的空格字符
     - 缺少Laiwu.shp
+- ResoldPrice_Jan
+    - Meizhou.csv，“经度_wgs84”改为“Lon84”
+    - Mianyang.csv，“经度_wgs84”改为“Lon84”
+    - Nanning.csv，“经度_wgs84”改为“Lon84”
+    - Nantong.csv，“经度_wgs84”改为“Lon84”
+    - Ningbo.csv，“经度_wgs84”改为“Lon84”
+    - Qingdao.csv，“经度_wgs84”改为“Lon84”
+    - Shenzhen.csv，“经度_wgs84”改为“Lon84”
 
 ## 目录结构
 - D:\Document\ArcMapDemo\price_POI_LY（工作空间）

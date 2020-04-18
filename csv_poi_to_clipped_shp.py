@@ -45,6 +45,8 @@ def clip_csv():
     for folder in CSV_FOLDER:
         temp_path = join(WORKSPACE, TEMP, folder)
         for filepath in glob.glob(join(WORKSPACE, folder, '*.csv')):
+            print join(temp_path, filename + '.shp')
+            
             filename = splitext(basename(filepath))[0]
 
             arcpy.MakeXYEventLayer_management(
@@ -56,6 +58,7 @@ def clip_csv():
                 filename + 'Event', feature_paths[filename], join(temp_path, filename + '.shp'))
 
             arcpy.Delete_management(filename + 'Event')
+
 
 # 直接保存展点数据的三种方法。后两种在10.3及以下版本存在BUG
 
@@ -73,6 +76,8 @@ def clip_poi():
     for city in listdir(join(WORKSPACE, POI_FOLDER)):
         temp_path=join(WORKSPACE, TEMP, POI_FOLDER, city)
         for filepath in glob.glob(join(WORKSPACE, POI_FOLDER, city, '*.xls*')):
+            print join(temp_path, filename + '.shp')
+
             filename=splitext(basename(filepath))[0]
 
             arcpy.MakeXYEventLayer_management(
@@ -84,6 +89,7 @@ def clip_poi():
                 filename + 'Event', feature_paths[city], join(temp_path, filename + '.shp'))
 
             arcpy.Delete_management(filename + 'Event')
+
 
 if __name__ == "__main__":
     clip_csv()

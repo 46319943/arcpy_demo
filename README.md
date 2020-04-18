@@ -30,7 +30,8 @@
         - ResoldPrice_Jan
 
 ## 使用方法
-
+### 共同点
+- 修改WORKSPACE参数以定位文件路径
 ### 方法一：在ArcMap中使用
 - 打开ArcMap，载入脚本
 ![](./images/ArcMap_Python.png)
@@ -41,6 +42,7 @@
 - 打开Python IDE，如VS Code
 - 打开脚本，修改为ArcGIS所安装的Python2.7环境
 ![](./images/VSC_Python.jpg)
+- 同样，修改WORKSPACE参数
 - 右键，在终端中运行。或点击右上角绿色三角
 - 注意：如果未安装Python拓展，在打开py脚本文件的时候会提示安装。
 

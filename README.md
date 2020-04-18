@@ -29,8 +29,24 @@
         - RentPrice_Jan
         - ResoldPrice_Jan
 
-## WORKSPACE
+## 使用方法
+
+### 方法一：在ArcMap中使用
+- 打开ArcMap，载入脚本
+![](./images/ArcMap_Python.png)
+- 使用鼠标移动光标，修改WORKSPACE参数
+- 将光标移到最后一行，回车运行
+
+## 方法二：在Python IDE中使用
+- 打开Python IDE，如VS Code
+- 打开脚本，修改为ArcGIS所安装的Python2.7环境
+![](./images/VSC_Python.jpg)
+- 右键，在终端中运行。或点击右上角绿色三角
+- 注意：如果未安装Python拓展，在打开py脚本文件的时候会提示安装。
+
+## 参数说明
+### WORKSPACE
 > 一般而言，只用设置这个参数即可。即目录结构中对应的工作空间
 
-## TEMP
+### TEMP
 > 输出目录名称

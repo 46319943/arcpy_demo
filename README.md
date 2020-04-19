@@ -6,6 +6,7 @@
 ## 注意事项
 - China行政区划
     - Haikou的SHP文件名错误，请手动去掉“Haikou ”最后的空格字符
+        - 已在生成词典时去除空格，增强健壮性
     - 缺少Laiwu.shp
 - ResoldPrice_Jan
     - Meizhou.csv，“经度_wgs84”改为“Lon84”
@@ -16,6 +17,9 @@
     - Qingdao.csv，“经度_wgs84”改为“Lon84”
     - Shenzhen.csv，“经度_wgs84”改为“Lon84”
     - Suzhou.csv，“经度_wgs84”改为“Lon84”
+- POI
+    - 有的xls文件中，只有列名，不存在点数据。对于这种情况，会跳过此文件，不生成shp
+    - 有的xls文件中，表名不为“Sheet1”，而是对应的POI类型名称。对于这种情况，取第一个表的表名进行处理
 
 ## 目录结构
 - D:\Document\ArcMapDemo\price_POI_LY（工作空间）

@@ -8,6 +8,7 @@
     - Haikou的SHP文件名错误，请手动去掉“Haikou ”最后的空格字符
         - 已在生成词典时去除空格，增强健壮性
     - 缺少Laiwu.shp
+        - 去掉三个文件夹中的Laiwu，即去掉Laiwu这个城市
 - ResoldPrice_Jan
     - Meizhou.csv，“经度_wgs84”改为“Lon84”
     - Mianyang.csv，“经度_wgs84”改为“Lon84”
@@ -65,3 +66,9 @@
 
 ### TEMP
 > 输出目录名称
+
+## 程序入口
+- clip_csv
+    - 处理CSV数据
+- clip_poi
+    - 处理POI的XLS数据

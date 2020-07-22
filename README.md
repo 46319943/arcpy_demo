@@ -21,7 +21,23 @@
 - POI
     - 有的xls文件中，只有列名，不存在点数据。对于这种情况，会跳过此文件，不生成shp
     - 有的xls文件中，表名不为“Sheet1”，而是对应的POI类型名称。对于这种情况，取第一个表的表名进行处理
-
+### data00_416after
+- D:\Document\ArcMapDemo\data00_416after\temp\POI\Changsha\Bazaar.shp
+- D:\Document\ArcMapDemo\data00_416after\temp\POI\Changsha\BHstore.shp
+- D:\Document\ArcMapDemo\data00_416after\temp\POI\Changsha\College.shp
+- D:\Document\ArcMapDemo\data00_416after\temp\POI\Changsha\Culture.shp
+- D:\Document\ArcMapDemo\data00_416after\temp\POI\Changsha\Museum.shp
+- D:\Document\ArcMapDemo\data00_416after\temp\POI\Changsha\Park.shp
+- D:\Document\ArcMapDemo\data00_416after\temp\POI\Guangzhou\Airport.shp
+- POI\Guangzhou
+    - 用Excel打开再关闭，问题消失？
+    - 程序解决：转xls为xlsx，处理xlsx。
+- POI\Nanchang一半的中文文件删掉
+- POI\Whenshan -> Wenshan
+- ResoldPrice_Jan\Luzhou 数据列有问题
+- ResoldPrice_Jan\Wuzhong 数据列有问题
+## RoadNetwork
+- baoding -> Baoding
 ## 目录结构
 - D:\Document\ArcMapDemo\price_POI_LY（工作空间）
     - China（中国各城市区划SHP）

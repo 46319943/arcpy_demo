@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*
 import os
-from os import listdir
-from os.path import join, basename, splitext, isfile
+from os import listdir, makedirs
+from os.path import join, basename, splitext, isfile, exists
 import glob
 import arcpy
 import xlrd
 
 # ArcPy工作路径，之后所有的路径都是这个路径的相对路径
-WORKSPACE = r'D:\Document\ArcMapDemo\price_POI_LY'
+WORKSPACE = r'D:\Document\ArcMapDemo\data00_416after'
 # arcpy.env.workspace = WORKSPACE
 
 # 行政区划目录
@@ -22,12 +22,12 @@ TEMP = 'temp'
 
 # 创建CSV临时目录
 for temp in [join(WORKSPACE, TEMP, folder) for folder in CSV_FOLDER]:
-    if not os.path.exists(temp):
-        os.makedirs(temp)
+    if not exists(temp):
+        makedirs(temp)
 # 创建POI临时目录
 for temp in [join(WORKSPACE, TEMP, POI_FOLDER, folder) for folder in listdir(join(WORKSPACE, POI_FOLDER))]:
-    if not os.path.exists(temp):
-        os.makedirs(temp)
+    if not exists(temp):
+        makedirs(temp)
 
 # 对应X Y坐标字段名称
 X_FIELD = 'Lon84'
@@ -43,13 +43,18 @@ feature_paths = {splitext(basename(filepath))[0].strip(): filepath
 spatial_ref = arcpy.SpatialReference(4326)
 
 
-def clip_csv():
+def clip_csv(restart=False):
     for folder in CSV_FOLDER:
         temp_path = join(WORKSPACE, TEMP, folder)
         for filepath in glob.glob(join(WORKSPACE, folder, '*.csv')):
 
             filename = splitext(basename(filepath))[0]
-            print join(temp_path, filename + '.shp')
+            output_filepath = join(temp_path, filename + '.shp')
+            print output_filepath
+            if exists(output_filepath):
+                if not restart:
+                    print 'exist'
+                    continue
 
             arcpy.MakeXYEventLayer_management(
                 filepath, X_FIELD, Y_FIELD, filename + 'Event', spatial_ref)
@@ -74,13 +79,18 @@ def clip_csv():
 # arcpy.CopyFeatures_management(filename + 'Event', join(WORKSPACE, TEMP, filename))
 
 
-def clip_poi():
+def clip_poi(restart=False):
     for city in listdir(join(WORKSPACE, POI_FOLDER)):
         temp_path = join(WORKSPACE, TEMP, POI_FOLDER, city)
-        for filepath in glob.glob(join(WORKSPACE, POI_FOLDER, city, '*.xls*')):
+        for filepath in glob.glob(join(WORKSPACE, POI_FOLDER, city, '*.xlsx')):
 
             filename = splitext(basename(filepath))[0]
-            print join(temp_path, filename + '.shp')
+            output_filepath = join(temp_path, filename + '.shp')
+            print output_filepath
+            if exists(output_filepath):
+                if not restart:
+                    print 'exist'
+                    continue
 
             sheet_name = ExcelHasRow(filepath)
             if not sheet_name:
@@ -92,6 +102,7 @@ def clip_poi():
 
             arcpy.Delete_management(join(temp_path, filename + '.shp'))
 
+            # TODO: 裁剪之后，有的POI会被全部裁剪掉，生成的SHP文件中不存在要素，是否保留？
             arcpy.Clip_analysis(
                 filename + 'Event', feature_paths[city], join(temp_path, filename + '.shp'))
 
@@ -106,6 +117,7 @@ def ExcelHasRow(filepath):
         return sheet_name
     else:
         return False
+    workxls.sav
 
 
 if __name__ == "__main__":

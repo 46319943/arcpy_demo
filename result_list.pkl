@@ -1,0 +1,10 @@
+(lp0
+VD:\u005cDocument\u005cArcMapDemo\u005cODSHP\u005cBaoding_Agricul.shp
+p1
+aVD:\u005cDocument\u005cArcMapDemo\u005cODSHP\u005cBaoding_Art.shp
+p2
+aVD:\u005cDocument\u005cArcMapDemo\u005cODSHP\u005cBaoding_BHstore.shp
+p3
+aVD:\u005cDocument\u005cArcMapDemo\u005cODSHP\u005cBaoding_Bus.shp
+p4
+a.

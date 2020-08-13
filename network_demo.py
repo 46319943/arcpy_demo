@@ -34,6 +34,10 @@ for dataset in datasets:
     origin_filename = dataset
     print(origin_filepath)
 
+    if not exists(origin_filepath):
+        print('file not exists')
+        continue
+
     # 如果所有的Destination都已经计算，则不要构建网络，避免重复运行
 
     # 构建网络

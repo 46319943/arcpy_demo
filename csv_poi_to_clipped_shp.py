@@ -117,7 +117,6 @@ def ExcelHasRow(filepath):
         return sheet_name
     else:
         return False
-    workxls.sav
 
 
 if __name__ == "__main__":
